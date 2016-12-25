@@ -1,3 +1,4 @@
+# Vapor Twitter Chat Bot
 A real time chat bot that responds to messages with tweets
 
 ### TODO
