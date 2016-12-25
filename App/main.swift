@@ -28,6 +28,9 @@ drop.socket("chat") { req, ws in
 
         if let u = username, let m = json.object?["message"]?.string {
             try room.send(name: u, message: m)
+            ///// TODO: BOT REPONSE FOR SENT MSGS ////////
+            try room.bot("<BOT RESPONDS to: \(m)>")
+            ////////////////////////////////////////
         }
     }
 
@@ -42,4 +45,3 @@ drop.socket("chat") { req, ws in
 }
 
 drop.run()
-
