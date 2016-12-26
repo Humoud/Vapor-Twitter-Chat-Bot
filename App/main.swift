@@ -29,6 +29,9 @@ drop.socket("chat") { req, ws in
         if let u = username, let m = json.object?["message"]?.string {
             try room.send(name: u, message: m)
             ///// TODO: BOT REPONSE FOR SENT MSGS ////////
+            let tw: Twitter = Twitter.init()
+            try tw.queryForTweet(q: "hello", drop: drop)
+            
             try room.bot("<BOT RESPONDS to: \(m)>")
             ////////////////////////////////////////
         }
